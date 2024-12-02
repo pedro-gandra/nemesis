@@ -22,6 +22,11 @@ class PhoneNumberModel extends FlutterFlowModel<PhoneNumberWidget> {
     return null;
   }
 
+  // Stores action output result for [Custom Action - requestPermissions] action in Button widget.
+  int? permissionResult;
+  // Stores action output result for [Custom Action - requestPermissions] action in Button widget.
+  int? permissionResult2;
+
   @override
   void initState(BuildContext context) {
     textControllerValidator = _textControllerValidator;
