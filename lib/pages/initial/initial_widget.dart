@@ -71,8 +71,8 @@ class _InitialWidgetState extends State<InitialWidget> {
                       borderRadius: BorderRadius.circular(8.0),
                       child: Image.asset(
                         'assets/images/49svh_2.png',
-                        width: 100.0,
-                        height: 100.0,
+                        width: 150.0,
+                        height: 150.0,
                         fit: BoxFit.contain,
                       ),
                     ),
