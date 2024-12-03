@@ -1,4 +1,4 @@
-package com.example.axium
+package com.nemesis.axium
 
 import android.content.BroadcastReceiver
 import android.content.Context

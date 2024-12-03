@@ -1,4 +1,4 @@
-package com.example.axium
+package com.nemesis.axium
 
 import io.github.jan.supabase.postgrest.*
 import io.github.jan.supabase.createSupabaseClient

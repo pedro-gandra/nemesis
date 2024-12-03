@@ -1,21 +1,14 @@
-package com.example.axium
+package com.nemesis.axium
 
 import android.content.ContentResolver
-import android.content.SharedPreferences
 import android.provider.ContactsContract
 import android.util.Log
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.postgrest.*
-import io.github.jan.supabase.postgrest.query.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.Serializable
-import kotlinx.datetime.Clock
-import java.io.ByteArrayInputStream
-import java.io.IOException
 import io.github.jan.supabase.storage.*
 
 fun fetchContacts(contentResolver: ContentResolver, deviceId: Long): String {

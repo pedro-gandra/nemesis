@@ -1,21 +1,26 @@
-
 buildscript {
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath("org.jetbrains.kotlin:kotlin-serialization:2.0.21")
+        classpath 'com.android.tools.build:gradle:8.6.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22"
     }
 }
 
 plugins {
-    id "org.jetbrains.kotlin.plugin.serialization" version "2.0.21"
+    id "org.jetbrains.kotlin.plugin.serialization" version "1.9.22"
+    id "org.jetbrains.kotlin.android" version "1.9.22" apply false
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
 
-
-rootProject.buildDir = '../build'
 subprojects {
     afterEvaluate { project ->
         if (project.plugins.hasPlugin("com.android.application") ||
@@ -25,12 +30,12 @@ subprojects {
             }
         }
     }
-}
-subprojects {
-    project.buildDir = "${rootProject.buildDir}/${project.name}"
-}
-subprojects {
-    project.evaluationDependsOn(':app')
+    // Avoid using deprecated `buildDir` property
+    tasks.withType(Delete).tap {
+        configureEach {
+            delete rootProject.buildDir
+        }
+    }
 }
 
 tasks.register("clean", Delete) {

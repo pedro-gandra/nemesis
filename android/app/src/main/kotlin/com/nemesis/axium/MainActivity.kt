@@ -1,7 +1,6 @@
-package com.example.axium
+package com.nemesis.axium
 
 import io.flutter.embedding.android.FlutterActivity
-import android.os.Bundle
 import android.util.Log
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
