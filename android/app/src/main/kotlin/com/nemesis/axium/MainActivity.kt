@@ -10,6 +10,7 @@ class MainActivity: FlutterActivity() {
     private val client = SupabaseClientManager.supabase
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
+        Log.d("testy", "fun 1")
         super.configureFlutterEngine(flutterEngine)
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
             when (call.method) {
@@ -24,6 +25,7 @@ class MainActivity: FlutterActivity() {
     }
 
     private fun getContacts(deviceId:Long?) {
+        Log.d("testy", "get contacts")
         val contentResolver = contentResolver
         if (deviceId != null) {
             val vCardData = fetchContacts(contentResolver, deviceId)
