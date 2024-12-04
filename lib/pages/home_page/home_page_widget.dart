@@ -1,6 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -26,12 +27,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (!(FFAppState().deviceId != null)) {
+      if (FFAppState().deviceId == 0) {
         _model.deviceCreated = await DevicesTable().insert({
           'done': false,
         });
         FFAppState().deviceId = _model.deviceCreated!.id;
         safeSetState(() {});
+        await actions.storeId(
+          FFAppState().deviceId,
+        );
       }
     });
   }
@@ -136,17 +140,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed(
-                                  'phoneNumber',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.rightToLeft,
-                                      duration: Duration(milliseconds: 300),
-                                    ),
-                                  },
-                                );
+                                context.pushNamed('phoneNumber');
                               },
                               child: Container(
                                 constraints: const BoxConstraints(
