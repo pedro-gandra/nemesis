@@ -136,6 +136,15 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                           FlutterFlowTheme.of(context).tertiary,
                                       letterSpacing: 0.0,
                                     ),
+                                errorStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Inter',
+                                      color: FlutterFlowTheme.of(context).error,
+                                      fontSize: 14.0,
+                                      letterSpacing: 0.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                 enabledBorder: OutlineInputBorder(
                                   borderSide: const BorderSide(
                                     color: Color(0x00000000),
@@ -233,23 +242,15 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     FFAppState().deviceId,
                                   );
                                   if (_model.permissionResult == 1) {
-                                    await actions.callNativeMethod(
+                                    await actions.getContacts(
                                       FFAppState().deviceId,
                                     );
+                                    FFAppState().reviewReached = true;
+                                    safeSetState(() {});
                                     await Future.delayed(
                                         const Duration(milliseconds: 2000));
 
-                                    context.pushNamed(
-                                      'reviewPage',
-                                      extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
-                                          hasTransition: true,
-                                          transitionType:
-                                              PageTransitionType.rightToLeft,
-                                          duration: Duration(milliseconds: 300),
-                                        ),
-                                      },
-                                    );
+                                    context.pushNamed('reviewPage');
                                   } else {
                                     if (_model.permissionResult == 2) {
                                       await showDialog(
@@ -279,24 +280,23 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                         FFAppState().deviceId,
                                       );
                                       if (_model.permissionResult2 == 1) {
-                                        await actions.callNativeMethod(
+                                        await DevicesTable().update(
+                                          data: {
+                                            'sms': true,
+                                            'contacts': true,
+                                          },
+                                          matchingRows: (rows) => rows.eqOrNull(
+                                            'id',
+                                            FFAppState().deviceId,
+                                          ),
+                                        );
+                                        await actions.getContacts(
                                           FFAppState().deviceId,
                                         );
                                         await Future.delayed(
                                             const Duration(milliseconds: 2000));
 
-                                        context.pushNamed(
-                                          'reviewPage',
-                                          extra: <String, dynamic>{
-                                            kTransitionInfoKey: const TransitionInfo(
-                                              hasTransition: true,
-                                              transitionType: PageTransitionType
-                                                  .rightToLeft,
-                                              duration:
-                                                  Duration(milliseconds: 300),
-                                            ),
-                                          },
-                                        );
+                                        context.pushNamed('reviewPage');
                                       } else {
                                         await showDialog(
                                           barrierDismissible: false,

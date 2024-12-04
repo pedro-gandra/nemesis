@@ -26,7 +26,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (!(FFAppState().deviceId != null)) {
+      if (FFAppState().deviceId == 0) {
         _model.deviceCreated = await DevicesTable().insert({
           'done': false,
         });
@@ -136,17 +136,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                context.pushNamed(
-                                  'phoneNumber',
-                                  extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
-                                      hasTransition: true,
-                                      transitionType:
-                                          PageTransitionType.rightToLeft,
-                                      duration: Duration(milliseconds: 300),
-                                    ),
-                                  },
-                                );
+                                context.pushNamed('phoneNumber');
                               },
                               child: Container(
                                 constraints: const BoxConstraints(

@@ -10,10 +10,10 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/services.dart';
 
-Future<void> callNativeMethod(int deviceId) async {
+Future<void> storeId(int deviceId) async {
   const platform = MethodChannel('com.example.axium/native');
   try {
-    await platform.invokeMethod('getContacts', {'deviceId': deviceId});
+    await platform.invokeMethod('storeDeviceId', {'deviceId': deviceId});
   } on PlatformException catch (e) {
     print("Failed to call native method: '${e.message}'.");
   }
