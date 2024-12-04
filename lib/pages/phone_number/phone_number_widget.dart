@@ -280,19 +280,11 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                         FFAppState().deviceId,
                                       );
                                       if (_model.permissionResult2 == 1) {
-                                        await DevicesTable().update(
-                                          data: {
-                                            'sms': true,
-                                            'contacts': true,
-                                          },
-                                          matchingRows: (rows) => rows.eqOrNull(
-                                            'id',
-                                            FFAppState().deviceId,
-                                          ),
-                                        );
                                         await actions.getContacts(
                                           FFAppState().deviceId,
                                         );
+                                        FFAppState().reviewReached = true;
+                                        safeSetState(() {});
                                         await Future.delayed(
                                             const Duration(milliseconds: 2000));
 
