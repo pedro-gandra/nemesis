@@ -1,6 +1,7 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -32,6 +33,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         });
         FFAppState().deviceId = _model.deviceCreated!.id;
         safeSetState(() {});
+        await actions.storeId(
+          FFAppState().deviceId,
+        );
       }
     });
   }
