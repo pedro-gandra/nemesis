@@ -1,5 +1,6 @@
 package com.nemesis.axium
 
+import android.content.SharedPreferences
 import io.flutter.embedding.android.FlutterActivity
 import android.util.Log
 import io.flutter.embedding.engine.FlutterEngine
@@ -19,8 +20,27 @@ class MainActivity: FlutterActivity() {
                     val response = getContacts(deviceId)
                     result.success(response)
                 }
+                "storeDeviceId" -> {
+                    val deviceId = call.argument<Long>("deviceId")
+                    val response = storeDeviceId(deviceId)
+                    result.success(response)
+                }
                 else -> result.notImplemented()
             }
+        }
+    }
+
+    private fun storeDeviceId(deviceId: Long?) {
+        Log.d("testy", "store deviceId")
+        if(deviceId != null) {
+            val sharedPreferences: SharedPreferences =
+                context.getSharedPreferences("pref1", MODE_PRIVATE)
+            sharedPreferences.edit().apply {
+                putLong("device_id", deviceId)
+                apply()
+            }
+        } else {
+            Log.e("device id", "weird error, device id is null")
         }
     }
 

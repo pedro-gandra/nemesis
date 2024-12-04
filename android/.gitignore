@@ -52,3 +52,4 @@ out/
 # Ignore build output of Android Studio (if a Flutter project is involved)
 build/
 flutter_build/
+local.properties
