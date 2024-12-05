@@ -85,7 +85,9 @@ class _PermissionDeniedWidgetState extends State<PermissionDeniedWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Grant permissions',
+                                    FFLocalizations.of(context).getText(
+                                      'a6ewvbc2' /* Grant permissions */,
+                                    ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
@@ -102,7 +104,9 @@ class _PermissionDeniedWidgetState extends State<PermissionDeniedWidget> {
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 18.0, 0.0, 0.0),
                                     child: Text(
-                                      'Our app needs some permissions to function properly, click on the button below to grant them',
+                                      FFLocalizations.of(context).getText(
+                                        'egef7mud' /* Our app needs some permissions... */,
+                                      ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -124,7 +128,9 @@ class _PermissionDeniedWidgetState extends State<PermissionDeniedWidget> {
                                       onPressed: () async {
                                         Navigator.pop(context);
                                       },
-                                      text: 'Continue',
+                                      text: FFLocalizations.of(context).getText(
+                                        'k2om6pju' /* Continue */,
+                                      ),
                                       options: FFButtonOptions(
                                         height: 38.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(

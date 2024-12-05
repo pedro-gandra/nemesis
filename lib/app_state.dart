@@ -22,6 +22,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _deviceId = prefs.getInt('ff_deviceId') ?? _deviceId;
     });
+    _safeInit(() {
+      _countryCode = prefs.getString('ff_countryCode') ?? _countryCode;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -43,6 +46,13 @@ class FFAppState extends ChangeNotifier {
   set deviceId(int value) {
     _deviceId = value;
     prefs.setInt('ff_deviceId', value);
+  }
+
+  String _countryCode = 'AAA';
+  String get countryCode => _countryCode;
+  set countryCode(String value) {
+    _countryCode = value;
+    prefs.setString('ff_countryCode', value);
   }
 }
 

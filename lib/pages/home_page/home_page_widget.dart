@@ -2,6 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/custom_code/actions/index.dart' as actions;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
@@ -32,6 +33,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           'done': false,
         });
         FFAppState().deviceId = _model.deviceCreated!.id;
+        FFAppState().countryCode = functions.getUserCountry()!;
         safeSetState(() {});
         await actions.storeId(
           FFAppState().deviceId,
@@ -100,7 +102,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          'Welcome to the\nAxium app',
+                          FFLocalizations.of(context).getText(
+                            'zopd5vif' /* Welcome to the
+Axium app */
+                            ,
+                          ),
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)
                               .titleLarge
@@ -116,7 +122,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 20.0, 0.0, 0.0),
                           child: Text(
-                            'Sign in to see the status of your application',
+                            FFLocalizations.of(context).getText(
+                              '0ml37149' /* Sign in to see the status of y... */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -164,7 +172,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         size: 26.0,
                                       ),
                                       Text(
-                                        'Use your phone number',
+                                        FFLocalizations.of(context).getText(
+                                          'cqvw3isc' /* Use your phone number */,
+                                        ),
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
