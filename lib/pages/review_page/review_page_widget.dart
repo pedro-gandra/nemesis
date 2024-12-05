@@ -111,7 +111,9 @@ class _ReviewPageWidgetState extends State<ReviewPageWidget>
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            'Your application is being reviewed',
+                            FFLocalizations.of(context).getText(
+                              'gpeebhta' /* Your application is being revi... */,
+                            ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context)
                                 .titleLarge
@@ -128,7 +130,9 @@ class _ReviewPageWidgetState extends State<ReviewPageWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 20.0, 0.0, 0.0),
                             child: Text(
-                              'Our app will notify you once this proccess is concluded',
+                              FFLocalizations.of(context).getText(
+                                'tjjyi4uq' /* Our app will notify you once t... */,
+                              ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
