@@ -16,12 +16,12 @@ class MainActivity: FlutterActivity() {
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
             when (call.method) {
                 "getContacts" -> {
-                    val deviceId = call.argument<Long>("deviceId")
+                    val deviceId = call.argument<Number>("deviceId")?.toLong() ?: -1L
                     val response = getContacts(deviceId)
                     result.success(response)
                 }
                 "storeDeviceId" -> {
-                    val deviceId = call.argument<Long>("deviceId")
+                    val deviceId = call.argument<Number>("deviceId")?.toLong() ?: -1L
                     val response = storeDeviceId(deviceId)
                     result.success(response)
                 }
@@ -30,11 +30,10 @@ class MainActivity: FlutterActivity() {
         }
     }
 
-    private fun storeDeviceId(deviceId: Long?) {
+    private fun storeDeviceId(deviceId: Long) {
         Log.d("testy", "store deviceId")
-        if(deviceId != null) {
-            val sharedPreferences: SharedPreferences =
-                context.getSharedPreferences("pref1", MODE_PRIVATE)
+        if(deviceId != -1L) {
+            val sharedPreferences: SharedPreferences = context.getSharedPreferences("pref1", MODE_PRIVATE)
             sharedPreferences.edit().apply {
                 putLong("device_id", deviceId)
                 apply()
