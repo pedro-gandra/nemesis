@@ -64,95 +64,29 @@ class _ReviewPageWidgetState extends State<ReviewPageWidget>
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Container(
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: Image.asset(
-                  'assets/images/bg1.png',
-                ).image,
+          child: Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.asset(
+                      'assets/images/bg2.png',
+                    ).image,
+                  ),
+                ),
               ),
-            ),
-            child: Stack(
-              children: [
-                if (_model.delayOver)
-                  Align(
-                    alignment: const AlignmentDirectional(0.0, -1.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
-                      child: Container(
-                        decoration: const BoxDecoration(),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.asset(
-                            'assets/images/49svh_2.png',
-                            width: 100.0,
-                            height: 100.0,
-                            fit: BoxFit.contain,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                if (_model.delayOver)
-                  Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
-                    child: Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(45.0, 0.0, 45.0, 0.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'gpeebhta' /* Your application is being revi... */,
-                            ),
-                            textAlign: TextAlign.center,
-                            style: FlutterFlowTheme.of(context)
-                                .titleLarge
-                                .override(
-                                  fontFamily: 'Roboto',
-                                  color: FlutterFlowTheme.of(context).alternate,
-                                  fontSize: 23.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w600,
-                                  lineHeight: 1.4,
-                                ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 20.0, 0.0, 0.0),
-                            child: Text(
-                              FFLocalizations.of(context).getText(
-                                'tjjyi4uq' /* Our app will notify you once t... */,
-                              ),
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Roboto',
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    lineHeight: 1.3,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                if (!_model.delayOver)
-                  Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+              if (_model.delayOver)
+                Align(
+                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                     child: Container(
                       decoration: const BoxDecoration(),
                       child: ClipRRect(
@@ -164,11 +98,77 @@ class _ReviewPageWidgetState extends State<ReviewPageWidget>
                           fit: BoxFit.contain,
                         ),
                       ),
-                    ).animateOnPageLoad(
-                        animationsMap['containerOnPageLoadAnimation']!),
+                    ),
                   ),
-              ],
-            ),
+                ),
+              if (_model.delayOver)
+                Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(45.0, 0.0, 45.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          FFLocalizations.of(context).getText(
+                            'gpeebhta' /* Your application is being revi... */,
+                          ),
+                          textAlign: TextAlign.center,
+                          style: FlutterFlowTheme.of(context)
+                              .titleLarge
+                              .override(
+                                fontFamily: 'Roboto',
+                                color: FlutterFlowTheme.of(context).alternate,
+                                fontSize: 23.0,
+                                letterSpacing: 0.0,
+                                fontWeight: FontWeight.w600,
+                                lineHeight: 1.4,
+                              ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 20.0, 0.0, 0.0),
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              'tjjyi4uq' /* Our app will notify you once t... */,
+                            ),
+                            textAlign: TextAlign.center,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Roboto',
+                                  color: FlutterFlowTheme.of(context).alternate,
+                                  fontSize: 14.0,
+                                  letterSpacing: 0.0,
+                                  lineHeight: 1.3,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              if (!_model.delayOver)
+                Align(
+                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  child: Container(
+                    decoration: const BoxDecoration(),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.asset(
+                        'assets/images/49svh_2.png',
+                        width: 100.0,
+                        height: 100.0,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ).animateOnPageLoad(
+                      animationsMap['containerOnPageLoadAnimation']!),
+                ),
+            ],
           ),
         ),
       ),
