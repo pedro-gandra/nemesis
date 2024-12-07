@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 
 import '/index.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -30,12 +31,32 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => const InitialWidget(),
+      errorBuilder: (context, state) => appStateNotifier.showSplashImage
+          ? Builder(
+              builder: (context) => Container(
+                color: FlutterFlowTheme.of(context).primary,
+                child: Image.asset(
+                  'assets/images/splash.png',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            )
+          : const InitialWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const InitialWidget(),
+          builder: (context, _) => appStateNotifier.showSplashImage
+              ? Builder(
+                  builder: (context) => Container(
+                    color: FlutterFlowTheme.of(context).primary,
+                    child: Image.asset(
+                      'assets/images/splash.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                )
+              : const InitialWidget(),
         ),
         FFRoute(
           name: 'HomePage',

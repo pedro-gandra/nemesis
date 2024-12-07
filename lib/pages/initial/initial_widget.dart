@@ -51,38 +51,39 @@ class _InitialWidgetState extends State<InitialWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Container(
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).secondaryBackground,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: Image.asset(
-                  'assets/images/bg1.png',
-                ).image,
+          child: Stack(
+            children: [
+              Container(
+                width: double.infinity,
+                height: double.infinity,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: Image.asset(
+                      'assets/images/bg2.png',
+                    ).image,
+                  ),
+                ),
               ),
-            ),
-            child: Stack(
-              children: [
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
-                  child: Container(
-                    decoration: const BoxDecoration(),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        'assets/images/49svh_2.png',
-                        width: 150.0,
-                        height: 150.0,
-                        fit: BoxFit.contain,
-                      ),
+              Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: Container(
+                  decoration: const BoxDecoration(),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                      'assets/images/49svh_2.png',
+                      width: 150.0,
+                      height: 150.0,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
