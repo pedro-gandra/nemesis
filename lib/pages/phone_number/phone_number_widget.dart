@@ -56,6 +56,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
           top: true,
           child: Stack(
