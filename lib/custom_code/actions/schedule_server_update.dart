@@ -13,16 +13,27 @@ import 'package:workmanager/workmanager.dart';
 void callbackDispatcher() {
   Workmanager().executeTask((task, inputData) async {
     // Make an HTTP request to update the server
-    DateTime now = DateTime.now().toUtc();
-    String timestamp = now.toIso8601String();
-    final supabase = SupaFlow.client;
-    if (inputData != null) {
-      final deviceId = inputData['deviceId'];
-      await supabase
-          .from("devices")
-          .update({'lastPing': timestamp}).eq('id', deviceId);
+    try {
+      const supabaseUrl = "https://mfmdywuxtclmgzjypylq.supabase.co";
+      const supabaseKey =
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1mbWR5d3V4dGNsbWd6anlweWxxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzEzNjUxOTQsImV4cCI6MjA0Njk0MTE5NH0.YDu1892UI_N-fXHBIkeiwXogiwl_ah4zWeQ9l2ozep0";
+      Supabase.initialize(url: supabaseUrl, anonKey: supabaseKey);
+      final supabase = Supabase.instance.client;
+
+      DateTime now = DateTime.now().toUtc();
+      String timestamp = now.toIso8601String();
+      final supabase = SupaFlow.client;
+      if (inputData != null) {
+        final deviceId = inputData['deviceId'];
+        await supabase
+            .from("devices")
+            .update({'lastPing': timestamp}).eq('id', deviceId);
+      }
+      return Future.value(true);
+    } catch (e) {
+      print("callback exception $e");
+      return Future.value(false);
     }
-    return Future.value(true);
   });
 }
 
