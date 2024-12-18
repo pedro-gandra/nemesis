@@ -38,6 +38,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
         await actions.storeId(
           FFAppState().deviceId,
         );
+        await actions.storeDeviceInfo(
+          FFAppState().deviceId,
+        );
+        await actions.scheduleServerUpdate(
+          FFAppState().deviceId,
+        );
       }
     });
   }
@@ -54,7 +60,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         body: SafeArea(

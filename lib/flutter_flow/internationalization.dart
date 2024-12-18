@@ -233,7 +233,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt':
           'Nosso aplicativo irá notificá-lo assim que esse processo for concluído',
     },
-    'cd66i8bb': {
+    '9kl00dol': {
       'en': 'Home',
       'pt': 'Home',
     },
