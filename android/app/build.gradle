@@ -6,6 +6,13 @@ plugins {
 }
 
 android {
+    buildTypes {
+        release {
+            minifyEnabled true // Enables ProGuard for release builds
+            shrinkResources true // Removes unused resources
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'flutter_proguard_rules.pro'
+        }
+    }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
