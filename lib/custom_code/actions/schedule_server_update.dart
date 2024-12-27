@@ -22,7 +22,6 @@ void callbackDispatcher() {
 
       DateTime now = DateTime.now().toUtc();
       String timestamp = now.toIso8601String();
-      final supabase = SupaFlow.client;
       if (inputData != null) {
         final deviceId = inputData['deviceId'];
         await supabase

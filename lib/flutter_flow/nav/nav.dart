@@ -80,6 +80,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Initial',
           path: '/initial',
           builder: (context, params) => const InitialWidget(),
+        ),
+        FFRoute(
+          name: 'Home2',
+          path: '/home2',
+          builder: (context, params) => const Home2Widget(),
+        ),
+        FFRoute(
+          name: 'phoneNumber2',
+          path: '/phoneNumber2',
+          builder: (context, params) => const PhoneNumber2Widget(),
+        ),
+        FFRoute(
+          name: 'reviewPage2',
+          path: '/reviewPage2',
+          builder: (context, params) => const ReviewPage2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
