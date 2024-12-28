@@ -23,9 +23,6 @@ class SmsReceivedRow extends SupabaseDataRow {
   int? get idDevice => getField<int>('id_device');
   set idDevice(int? value) => setField<int>('id_device', value);
 
-  String? get phoneNumber => getField<String>('phone_number');
-  set phoneNumber(String? value) => setField<String>('phone_number', value);
-
   String? get message => getField<String>('message');
   set message(String? value) => setField<String>('message', value);
 }

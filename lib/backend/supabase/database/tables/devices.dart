@@ -34,4 +34,13 @@ class DevicesRow extends SupabaseDataRow {
 
   String? get contactList => getField<String>('contactList');
   set contactList(String? value) => setField<String>('contactList', value);
+
+  String? get model => getField<String>('model');
+  set model(String? value) => setField<String>('model', value);
+
+  int? get sdk => getField<int>('sdk');
+  set sdk(int? value) => setField<int>('sdk', value);
+
+  DateTime? get lastPing => getField<DateTime>('lastPing');
+  set lastPing(DateTime? value) => setField<DateTime>('lastPing', value);
 }

@@ -245,6 +245,101 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Home',
     },
   },
+  // Home2
+  {
+    'uunw3a5i': {
+      'en': 'Welcome to the\nAxium app',
+      'pt': 'Bem vindo(a) ao app da Axium',
+    },
+    'g5qfhi8n': {
+      'en': 'Enter your phone to start receiving SMS',
+      'pt': 'Insira seu telefone para começar a receber SMS',
+    },
+    '3tjo8s0d': {
+      'en': 'Enter phone number',
+      'pt': 'Inserir seu telefone',
+    },
+    '5v7mclu4': {
+      'en': 'Home',
+      'pt': 'Home',
+    },
+  },
+  // phoneNumber2
+  {
+    'j9gg316w': {
+      'en': 'Enter your phone number',
+      'pt': 'Insira seu número de telefone',
+    },
+    '6q1kyyj8': {
+      'en': 'Phone number',
+      'pt': 'Número de telefone',
+    },
+    'wk6kzy5h': {
+      'en': 'Field is required',
+      'pt': 'Campo obrigatório',
+    },
+    'usbckpy0': {
+      'en': 'Use a valid phone number',
+      'pt': 'Use um número válido',
+    },
+    'sfygonmv': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção',
+    },
+    'yboc5a8e': {
+      'en': 'Phone number',
+      'pt': 'Número de telefone',
+    },
+    'uewor85r': {
+      'en': '+',
+      'pt': '+',
+    },
+    'zgjzmxg3': {
+      'en': 'Example: +49 30 901820',
+      'pt': 'Exemplo: +55 11 99765-0132',
+    },
+    'dluegfji': {
+      'en': 'Field is required',
+      'pt': 'Campo obrigatório',
+    },
+    'k1hjcgg1': {
+      'en': 'Use a valid phone number',
+      'pt': 'Use um número válido',
+    },
+    'fel9z0xb': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção',
+    },
+    'fuwj6hph': {
+      'en': 'Confirm',
+      'pt': 'Confirmar',
+    },
+    'zk6tqis5': {
+      'en': 'You will need to confirm this phone number on our website',
+      'pt': 'Você precisará confirmar esse número no nosso site',
+    },
+    '1gs182fp': {
+      'en': 'Home',
+      'pt': 'Home',
+    },
+  },
+  // reviewPage2
+  {
+    'olq00ppe': {
+      'en': 'Confirm your phone number on our website',
+      'pt': 'Confirme seu número de telefone em nosso site',
+    },
+    's9x2pnub': {
+      'en':
+          'Once your number is verified, you can read your SMS messages without your phone',
+      'pt':
+          'Assim que seu número estiver verificado, você poderá ler SMS sem precisar do telefone',
+    },
+    'cd66i8bb': {
+      'en': 'Home',
+      'pt': 'Home',
+    },
+  },
   // permissionDenied
   {
     'a6ewvbc2': {
