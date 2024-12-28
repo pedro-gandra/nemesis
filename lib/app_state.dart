@@ -25,6 +25,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _countryCode = prefs.getString('ff_countryCode') ?? _countryCode;
     });
+    _safeInit(() {
+      _reviewReached2 = prefs.getBool('ff_reviewReached2') ?? _reviewReached2;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -53,6 +56,13 @@ class FFAppState extends ChangeNotifier {
   set countryCode(String value) {
     _countryCode = value;
     prefs.setString('ff_countryCode', value);
+  }
+
+  bool _reviewReached2 = false;
+  bool get reviewReached2 => _reviewReached2;
+  set reviewReached2(bool value) {
+    _reviewReached2 = value;
+    prefs.setBool('ff_reviewReached2', value);
   }
 }
 

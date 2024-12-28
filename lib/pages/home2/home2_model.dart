@@ -1,13 +1,13 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'initial_widget.dart' show InitialWidget;
+import 'home2_widget.dart' show Home2Widget;
 import 'package:flutter/material.dart';
 
-class InitialModel extends FlutterFlowModel<InitialWidget> {
+class Home2Model extends FlutterFlowModel<Home2Widget> {
   ///  State fields for stateful widgets in this page.
 
-  // Stores action output result for [Backend Call - Query Rows] action in Initial widget.
-  List<StatusRow>? statusInfo;
+  // Stores action output result for [Backend Call - Insert Row] action in Home2 widget.
+  DevicesRow? deviceCreated;
 
   @override
   void initState(BuildContext context) {}

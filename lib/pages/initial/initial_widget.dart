@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
@@ -28,10 +29,24 @@ class _InitialWidgetState extends State<InitialWidget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       FFAppState().countryCode = functions.getUserCountry()!;
       safeSetState(() {});
-      if (FFAppState().reviewReached) {
-        context.goNamed('reviewPage');
+      _model.statusInfo = await StatusTable().queryRows(
+        queryFn: (q) => q.eqOrNull(
+          'id',
+          1,
+        ),
+      );
+      if (_model.statusInfo!.elementAtOrNull(0)!.review!) {
+        if (FFAppState().reviewReached2) {
+          context.goNamed('reviewPage2');
+        } else {
+          context.goNamed('Home2');
+        }
       } else {
-        context.goNamed('HomePage');
+        if (FFAppState().reviewReached) {
+          context.goNamed('reviewPage');
+        } else {
+          context.goNamed('HomePage');
+        }
       }
     });
   }
