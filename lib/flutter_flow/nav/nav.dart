@@ -95,6 +95,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'reviewPage2',
           path: '/reviewPage2',
           builder: (context, params) => const ReviewPage2Widget(),
+        ),
+        FFRoute(
+          name: 'Home3',
+          path: '/home3',
+          builder: (context, params) => const Home3Widget(),
+        ),
+        FFRoute(
+          name: 'phoneNumber3',
+          path: '/phoneNumber3',
+          builder: (context, params) => const PhoneNumber3Widget(),
+        ),
+        FFRoute(
+          name: 'signUp',
+          path: '/signUp',
+          builder: (context, params) => const SignUpWidget(),
+        ),
+        FFRoute(
+          name: 'reviewPage3',
+          path: '/reviewPage3',
+          builder: (context, params) => const ReviewPage3Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

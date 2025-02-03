@@ -46,3 +46,21 @@ String joinStrings(
 ) {
   return str1 + '' + str2;
 }
+
+DateTime changeDate(DateTime date) {
+  return date.add(Duration(days: 3));
+}
+
+String calculateCountdown(DateTime available) {
+  Duration difference = available.difference(DateTime.now());
+
+  if (difference.isNegative) {
+    return "00:00:00";
+  }
+
+  int hours = difference.inHours;
+  int minutes = difference.inMinutes % 60;
+  int seconds = difference.inSeconds % 60;
+
+  return "${hours.toString().padLeft(2, '0')}:${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}";
+}

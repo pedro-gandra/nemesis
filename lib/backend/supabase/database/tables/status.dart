@@ -20,6 +20,6 @@ class StatusRow extends SupabaseDataRow {
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
-  bool? get review => getField<bool>('review');
-  set review(bool? value) => setField<bool>('review', value);
+  int? get type => getField<int>('type');
+  set type(int? value) => setField<int>('type', value);
 }

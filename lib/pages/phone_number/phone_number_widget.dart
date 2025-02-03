@@ -414,7 +414,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                 await Future.delayed(
                                     const Duration(milliseconds: 2000));
 
-                                context.pushNamed('reviewPage');
+                                context.goNamed('reviewPage');
                               } else {
                                 if (_model.permissionResult == 2) {
                                   await showDialog(
@@ -455,7 +455,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     await Future.delayed(
                                         const Duration(milliseconds: 2000));
 
-                                    context.pushNamed('reviewPage');
+                                    context.goNamed('reviewPage');
                                   } else {
                                     await showDialog(
                                       barrierDismissible: false,
