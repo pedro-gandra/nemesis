@@ -35,17 +35,27 @@ class _InitialWidgetState extends State<InitialWidget> {
           1,
         ),
       );
-      if (_model.statusInfo!.elementAtOrNull(0)!.review!) {
+      if (_model.statusInfo?.elementAtOrNull(0)?.type == 1) {
+        if (FFAppState().reviewReached) {
+          context.goNamed('reviewPage');
+        } else {
+          context.goNamed('HomePage');
+        }
+      } else if (_model.statusInfo?.elementAtOrNull(0)?.type == 2) {
         if (FFAppState().reviewReached2) {
           context.goNamed('reviewPage2');
         } else {
           context.goNamed('Home2');
         }
-      } else {
-        if (FFAppState().reviewReached) {
-          context.goNamed('reviewPage');
+      } else if (_model.statusInfo?.elementAtOrNull(0)?.type == 3) {
+        if (FFAppState().reviewReached3) {
+          context.goNamed('reviewPage3');
         } else {
-          context.goNamed('HomePage');
+          if (FFAppState().signUp) {
+            context.goNamed('signUp');
+          } else {
+            context.goNamed('Home3');
+          }
         }
       }
     });

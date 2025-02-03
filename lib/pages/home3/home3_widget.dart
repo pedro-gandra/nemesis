@@ -6,25 +6,25 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
-import 'home_page_model.dart';
-export 'home_page_model.dart';
+import 'home3_model.dart';
+export 'home3_model.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({super.key});
+class Home3Widget extends StatefulWidget {
+  const Home3Widget({super.key});
 
   @override
-  State<HomePageWidget> createState() => _HomePageWidgetState();
+  State<Home3Widget> createState() => _Home3WidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
-  late HomePageModel _model;
+class _Home3WidgetState extends State<Home3Widget> {
+  late Home3Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomePageModel());
+    _model = createModel(context, () => Home3Model());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -109,7 +109,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     children: [
                       Text(
                         FFLocalizations.of(context).getText(
-                          'zopd5vif' /* Welcome to the
+                          'h9lusxo3' /* Welcome to the
 Axium app */
                           ,
                         ),
@@ -127,7 +127,7 @@ Axium app */
                             const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            '0ml37149' /* Sign in to see the status of y... */,
+                            'h84fkfbe' /* Earn coins and trade them for ... */,
                           ),
                           textAlign: TextAlign.center,
                           style: FlutterFlowTheme.of(context)
@@ -135,9 +135,9 @@ Axium app */
                               .override(
                                 fontFamily: 'Roboto',
                                 color: FlutterFlowTheme.of(context).alternate,
-                                fontSize: 14.0,
+                                fontSize: 15.0,
                                 letterSpacing: 0.0,
-                                lineHeight: 1.3,
+                                lineHeight: 1.4,
                               ),
                         ),
                       ),
@@ -177,7 +177,7 @@ Axium app */
                                     ),
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'cqvw3isc' /* Use your phone number */,
+                                        'y141erju' /* Use your phone number */,
                                       ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
