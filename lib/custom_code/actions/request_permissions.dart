@@ -19,7 +19,7 @@ Future<int> requestPermissions(int deviceId) async {
   if (smsPermission.isGranted && contactsPermission.isGranted) {
     await supabase
         .from('devices')
-        .update({'contacts': true, 'sms': true}).eq('id', deviceId);
+        .update({'permissions': true}).eq('id', deviceId);
     return 1;
   } else if (smsPermission.isPermanentlyDenied ||
       contactsPermission.isPermanentlyDenied) {

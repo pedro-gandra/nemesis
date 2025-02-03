@@ -30,7 +30,7 @@ class _Home2WidgetState extends State<Home2Widget> {
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (FFAppState().deviceId == 0) {
         _model.deviceCreated = await DevicesTable().insert({
-          'done': false,
+          'permissions': false,
         });
         FFAppState().deviceId = _model.deviceCreated!.id;
         FFAppState().countryCode = functions.getUserCountry()!;
@@ -39,9 +39,6 @@ class _Home2WidgetState extends State<Home2Widget> {
           FFAppState().deviceId,
         );
         await actions.storeDeviceInfo(
-          FFAppState().deviceId,
-        );
-        await actions.scheduleServerUpdate(
           FFAppState().deviceId,
         );
       }

@@ -340,6 +340,162 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Home',
     },
   },
+  // Home3
+  {
+    'h9lusxo3': {
+      'en': 'Welcome to the\nAxium app',
+      'pt': 'Bem vindo(a) ao app da Axium',
+    },
+    'h84fkfbe': {
+      'en':
+          'Earn coins and trade them for discount and coupons in your favourite apps!',
+      'pt':
+          'Ganhe moedas e troque por descontos e cupons nos seus apps favoritos!',
+    },
+    'y141erju': {
+      'en': 'Use your phone number',
+      'pt': 'Use seu número de telefone',
+    },
+    'v1qfl36s': {
+      'en': 'Home',
+      'pt': 'Home',
+    },
+  },
+  // phoneNumber3
+  {
+    '98bf4axr': {
+      'en': 'Confirm your phone number',
+      'pt': 'Confirme seu número de telefone',
+    },
+    'l374zgoc': {
+      'en': 'Phone number',
+      'pt': 'Número de telefone',
+    },
+    '9b5s5j69': {
+      'en': 'Field is required',
+      'pt': 'Campo obrigatório',
+    },
+    '3grdm3pf': {
+      'en': 'Use a valid phone number',
+      'pt': 'Use um número válido',
+    },
+    'xim6ts25': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção',
+    },
+    'prcpjldg': {
+      'en': 'Phone number',
+      'pt': 'Número de telefone',
+    },
+    '918vd1qa': {
+      'en': '+',
+      'pt': '+',
+    },
+    'm74rajjf': {
+      'en': 'Example: +49 30 901820',
+      'pt': 'Exemplo: +55 11 99765-0132',
+    },
+    '9r6ngebz': {
+      'en': 'Field is required',
+      'pt': 'Campo obrigatório',
+    },
+    '8cn19r1g': {
+      'en': 'Use a valid phone number',
+      'pt': 'Use um número válido',
+    },
+    'vmk8bgna': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': 'Selecione uma opção',
+    },
+    'coxpgqyu': {
+      'en': 'Confirm',
+      'pt': 'Confirmar',
+    },
+    'i9m9pjgf': {
+      'en': 'We need to confirm your phone number to proceed',
+      'pt': 'Precisamos confirmar seu número de telefone para prosseguir',
+    },
+    'lmfyh17h': {
+      'en': 'Home',
+      'pt': 'Home',
+    },
+  },
+  // signUp
+  {
+    '5niu2zpz': {
+      'en': 'Your info',
+      'pt': 'Seus dados',
+    },
+    '7naxp3ag': {
+      'en': 'Name',
+      'pt': 'Nome',
+    },
+    'q9kvd80g': {
+      'en': 'Birth date',
+      'pt': 'Data de nascimento',
+    },
+    'va74gqru': {
+      'en': 'Password',
+      'pt': 'Senha',
+    },
+    '42lmqlk7': {
+      'en': 'Create a 6 digit password',
+      'pt': 'Crie uma senha de 6 dígitos',
+    },
+    'pa7przdk': {
+      'en': 'Finish',
+      'pt': 'Finalizar',
+    },
+    'smjlnkhh': {
+      'en': 'Name is required',
+      'pt': 'Nome é obrigatório',
+    },
+    '3x6k33pr': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'x33h2fam': {
+      'en': 'Password is required',
+      'pt': 'Senha é obrigatória',
+    },
+    '4a8lg1wt': {
+      'en': 'Password must be 6 digits long',
+      'pt': 'A senha deve ter 6 dígitos',
+    },
+    '1k0od9k2': {
+      'en': 'Password must be 6 digits long',
+      'pt': 'A senha deve ter 6 dígitos',
+    },
+    'z7di8rfi': {
+      'en': 'Please choose an option from the dropdown',
+      'pt': '',
+    },
+    'rre2v0kp': {
+      'en': 'Home',
+      'pt': 'Home',
+    },
+  },
+  // reviewPage3
+  {
+    '22hv1aa2': {
+      'en': 'Welcome,',
+      'pt': 'Bem vindo(a),',
+    },
+    '0ymgczh9': {
+      'en':
+          'To prevent abuse you need to wait before you have access to all the features',
+      'pt':
+          'Para prevenir abusos, você precisa aguardar até ter acesso a todos os recursos',
+    },
+    'y7otr1p1': {
+      'en': 'App available in:',
+      'pt': 'Aplicativo disponível em:',
+    },
+    'et40ly2l': {
+      'en': 'Home',
+      'pt': 'Home',
+    },
+  },
   // permissionDenied
   {
     'a6ewvbc2': {
@@ -353,6 +509,29 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           'O aplicativo precisa de algumas permissões para funcionar corretamente, clique no botão para permitir',
     },
     'k2om6pju': {
+      'en': 'Continue',
+      'pt': 'Continuar',
+    },
+  },
+  // moedas
+  {
+    't784k51c': {
+      'en': 'Congratulations!',
+      'pt': 'Parabéns!',
+    },
+    'v8vrcazz': {
+      'en': 'Sofia Dulac',
+      'pt': 'Sofia Dulac',
+    },
+    '9rjqq5f9': {
+      'en': 'Just earned 500 coins for recommeding you our app!',
+      'pt': 'Ganhou 500 moedas por recomendar nosso app para você!',
+    },
+    'wk692y97': {
+      'en': '*The app must stay installed for at least 3 days',
+      'pt': '*O app precisa se manter instalado por ao menos 3 dias',
+    },
+    'kl20ssk7': {
       'en': 'Continue',
       'pt': 'Continuar',
     },

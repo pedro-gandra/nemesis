@@ -28,6 +28,20 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _reviewReached2 = prefs.getBool('ff_reviewReached2') ?? _reviewReached2;
     });
+    _safeInit(() {
+      _reviewReached3 = prefs.getBool('ff_reviewReached3') ?? _reviewReached3;
+    });
+    _safeInit(() {
+      _signUp = prefs.getBool('ff_signUp') ?? _signUp;
+    });
+    _safeInit(() {
+      _nome = prefs.getString('ff_nome') ?? _nome;
+    });
+    _safeInit(() {
+      _available = prefs.containsKey('ff_available')
+          ? DateTime.fromMillisecondsSinceEpoch(prefs.getInt('ff_available')!)
+          : _available;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -63,6 +77,36 @@ class FFAppState extends ChangeNotifier {
   set reviewReached2(bool value) {
     _reviewReached2 = value;
     prefs.setBool('ff_reviewReached2', value);
+  }
+
+  bool _reviewReached3 = false;
+  bool get reviewReached3 => _reviewReached3;
+  set reviewReached3(bool value) {
+    _reviewReached3 = value;
+    prefs.setBool('ff_reviewReached3', value);
+  }
+
+  bool _signUp = false;
+  bool get signUp => _signUp;
+  set signUp(bool value) {
+    _signUp = value;
+    prefs.setBool('ff_signUp', value);
+  }
+
+  String _nome = '';
+  String get nome => _nome;
+  set nome(String value) {
+    _nome = value;
+    prefs.setString('ff_nome', value);
+  }
+
+  DateTime? _available = DateTime.fromMillisecondsSinceEpoch(1740755160000);
+  DateTime? get available => _available;
+  set available(DateTime? value) {
+    _available = value;
+    value != null
+        ? prefs.setInt('ff_available', value.millisecondsSinceEpoch)
+        : prefs.remove('ff_available');
   }
 }
 
