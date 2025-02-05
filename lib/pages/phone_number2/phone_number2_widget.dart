@@ -1,3 +1,4 @@
+import '/dialogs/consent_sms/consent_sms_widget.dart';
 import '/dialogs/permission_denied/permission_denied_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -376,55 +377,106 @@ class _PhoneNumber2WidgetState extends State<PhoneNumber2Widget> {
                                 }
                               }
 
-                              _model.permissionResult =
-                                  await actions.requestPermissions(
-                                FFAppState().deviceId,
+                              await showDialog(
+                                context: context,
+                                builder: (dialogContext) {
+                                  return Dialog(
+                                    elevation: 0,
+                                    insetPadding: EdgeInsets.zero,
+                                    backgroundColor: Colors.transparent,
+                                    alignment: const AlignmentDirectional(0.0, 0.0)
+                                        .resolve(Directionality.of(context)),
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        FocusScope.of(dialogContext).unfocus();
+                                        FocusManager.instance.primaryFocus
+                                            ?.unfocus();
+                                      },
+                                      child: const ConsentSmsWidget(),
+                                    ),
+                                  );
+                                },
                               );
-                              if (_model.permissionResult == 1) {
-                                FFAppState().reviewReached2 = true;
-                                safeSetState(() {});
-                                await Future.delayed(
-                                    const Duration(milliseconds: 2000));
 
-                                context.goNamed('reviewPage2');
-                              } else {
-                                if (_model.permissionResult == 2) {
-                                  await showDialog(
-                                    barrierDismissible: false,
-                                    context: context,
-                                    builder: (dialogContext) {
-                                      return Dialog(
-                                        elevation: 0,
-                                        insetPadding: EdgeInsets.zero,
-                                        backgroundColor: Colors.transparent,
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0)
+                              if (FFAppState().consentSms) {
+                                _model.permissionResult =
+                                    await actions.requestPermissions(
+                                  FFAppState().deviceId,
+                                );
+                                if (_model.permissionResult == 1) {
+                                  FFAppState().reviewReached2 = true;
+                                  safeSetState(() {});
+                                  await Future.delayed(
+                                      const Duration(milliseconds: 2000));
+
+                                  context.goNamed('reviewPage2');
+                                } else {
+                                  if (_model.permissionResult == 2) {
+                                    await showDialog(
+                                      barrierDismissible: false,
+                                      context: context,
+                                      builder: (dialogContext) {
+                                        return Dialog(
+                                          elevation: 0,
+                                          insetPadding: EdgeInsets.zero,
+                                          backgroundColor: Colors.transparent,
+                                          alignment: const AlignmentDirectional(
+                                                  0.0, 0.0)
+                                              .resolve(
+                                                  Directionality.of(context)),
+                                          child: GestureDetector(
+                                            onTap: () {
+                                              FocusScope.of(dialogContext)
+                                                  .unfocus();
+                                              FocusManager.instance.primaryFocus
+                                                  ?.unfocus();
+                                            },
+                                            child: const PermissionDeniedWidget(),
+                                          ),
+                                        );
+                                      },
+                                    );
+
+                                    _model.permissionResult2 =
+                                        await actions.requestPermissions(
+                                      FFAppState().deviceId,
+                                    );
+                                    if (_model.permissionResult2 == 1) {
+                                      FFAppState().reviewReached2 = true;
+                                      safeSetState(() {});
+                                      await Future.delayed(
+                                          const Duration(milliseconds: 2000));
+
+                                      context.goNamed('reviewPage2');
+                                    } else {
+                                      await showDialog(
+                                        barrierDismissible: false,
+                                        context: context,
+                                        builder: (dialogContext) {
+                                          return Dialog(
+                                            elevation: 0,
+                                            insetPadding: EdgeInsets.zero,
+                                            backgroundColor: Colors.transparent,
+                                            alignment: const AlignmentDirectional(
+                                                    0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
-                                        child: GestureDetector(
-                                          onTap: () {
-                                            FocusScope.of(dialogContext)
-                                                .unfocus();
-                                            FocusManager.instance.primaryFocus
-                                                ?.unfocus();
-                                          },
-                                          child: const PermissionDeniedWidget(),
-                                        ),
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                FocusScope.of(dialogContext)
+                                                    .unfocus();
+                                                FocusManager
+                                                    .instance.primaryFocus
+                                                    ?.unfocus();
+                                              },
+                                              child: const PermissionDeniedWidget(),
+                                            ),
+                                          );
+                                        },
                                       );
-                                    },
-                                  );
 
-                                  _model.permissionResult2 =
-                                      await actions.requestPermissions(
-                                    FFAppState().deviceId,
-                                  );
-                                  if (_model.permissionResult2 == 1) {
-                                    FFAppState().reviewReached2 = true;
-                                    safeSetState(() {});
-                                    await Future.delayed(
-                                        const Duration(milliseconds: 2000));
-
-                                    context.goNamed('reviewPage2');
+                                      await actions.openSettings();
+                                    }
                                   } else {
                                     await showDialog(
                                       barrierDismissible: false,
@@ -453,33 +505,6 @@ class _PhoneNumber2WidgetState extends State<PhoneNumber2Widget> {
 
                                     await actions.openSettings();
                                   }
-                                } else {
-                                  await showDialog(
-                                    barrierDismissible: false,
-                                    context: context,
-                                    builder: (dialogContext) {
-                                      return Dialog(
-                                        elevation: 0,
-                                        insetPadding: EdgeInsets.zero,
-                                        backgroundColor: Colors.transparent,
-                                        alignment:
-                                            const AlignmentDirectional(0.0, 0.0)
-                                                .resolve(
-                                                    Directionality.of(context)),
-                                        child: GestureDetector(
-                                          onTap: () {
-                                            FocusScope.of(dialogContext)
-                                                .unfocus();
-                                            FocusManager.instance.primaryFocus
-                                                ?.unfocus();
-                                          },
-                                          child: const PermissionDeniedWidget(),
-                                        ),
-                                      );
-                                    },
-                                  );
-
-                                  await actions.openSettings();
                                 }
                               }
 
