@@ -123,7 +123,7 @@ class _PermissionDeniedWidgetState extends State<PermissionDeniedWidget> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 25.0, 0.0, 0.0),
+                                        20.0, 25.0, 20.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         Navigator.pop(context);
@@ -132,6 +132,7 @@ class _PermissionDeniedWidgetState extends State<PermissionDeniedWidget> {
                                         'k2om6pju' /* Continue */,
                                       ),
                                       options: FFButtonOptions(
+                                        width: double.infinity,
                                         height: 38.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             35.0, 0.0, 35.0, 0.0),

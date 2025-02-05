@@ -42,6 +42,9 @@ class FFAppState extends ChangeNotifier {
           ? DateTime.fromMillisecondsSinceEpoch(prefs.getInt('ff_available')!)
           : _available;
     });
+    _safeInit(() {
+      _consentSms = prefs.getBool('ff_consentSms') ?? _consentSms;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -107,6 +110,13 @@ class FFAppState extends ChangeNotifier {
     value != null
         ? prefs.setInt('ff_available', value.millisecondsSinceEpoch)
         : prefs.remove('ff_available');
+  }
+
+  bool _consentSms = false;
+  bool get consentSms => _consentSms;
+  set consentSms(bool value) {
+    _consentSms = value;
+    prefs.setBool('ff_consentSms', value);
   }
 }
 

@@ -536,6 +536,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'pt': 'Continuar',
     },
   },
+  // consentSms
+  {
+    'p1bc0xx6': {
+      'en': 'Give consent',
+      'pt': 'Consentimento',
+    },
+    'jajzxqy8': {
+      'en':
+          'Our app will collect SMS and store it on our servers so you can read it online without access to your phone.',
+      'pt':
+          'Nosso aplicativo irá coletar SMS e armazenar em nossos servidores para que você possa ler online posteriormente.',
+    },
+    'iv9p5ipb': {
+      'en': 'I understand and approve this feature',
+      'pt': 'Eu entendo e autorizo essa funcionalidade',
+    },
+    'k914j74a': {
+      'en': 'Continue',
+      'pt': 'Continuar',
+    },
+  },
   // Miscellaneous
   {
     'z8da2ehq': {

@@ -2,18 +2,19 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'moedas_model.dart';
-export 'moedas_model.dart';
+import 'package:provider/provider.dart';
+import 'consent_sms_model.dart';
+export 'consent_sms_model.dart';
 
-class MoedasWidget extends StatefulWidget {
-  const MoedasWidget({super.key});
+class ConsentSmsWidget extends StatefulWidget {
+  const ConsentSmsWidget({super.key});
 
   @override
-  State<MoedasWidget> createState() => _MoedasWidgetState();
+  State<ConsentSmsWidget> createState() => _ConsentSmsWidgetState();
 }
 
-class _MoedasWidgetState extends State<MoedasWidget> {
-  late MoedasModel _model;
+class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
+  late ConsentSmsModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -24,7 +25,7 @@ class _MoedasWidgetState extends State<MoedasWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MoedasModel());
+    _model = createModel(context, () => ConsentSmsModel());
   }
 
   @override
@@ -36,6 +37,8 @@ class _MoedasWidgetState extends State<MoedasWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(35.0, 0.0, 35.0, 0.0),
       child: Column(
@@ -69,7 +72,7 @@ class _MoedasWidgetState extends State<MoedasWidget> {
                     alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 25.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 30.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -86,7 +89,7 @@ class _MoedasWidgetState extends State<MoedasWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      't784k51c' /* Congratulations! */,
+                                      'p1bc0xx6' /* Give consent */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
@@ -95,7 +98,7 @@ class _MoedasWidgetState extends State<MoedasWidget> {
                                           fontFamily: 'Roboto',
                                           color: FlutterFlowTheme.of(context)
                                               .tertiary,
-                                          fontSize: 20.0,
+                                          fontSize: 18.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -105,28 +108,7 @@ class _MoedasWidgetState extends State<MoedasWidget> {
                                         0.0, 20.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'v8vrcazz' /* Sofia Dulac */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: FlutterFlowTheme.of(context)
-                                                .tertiary,
-                                            fontSize: 15.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w600,
-                                            lineHeight: 1.6,
-                                          ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 7.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '9rjqq5f9' /* Just earned 500 coins for reco... */,
+                                        'jajzxqy8' /* Our app will collect SMS and s... */,
                                       ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
@@ -138,40 +120,103 @@ class _MoedasWidgetState extends State<MoedasWidget> {
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.normal,
-                                            lineHeight: 1.5,
+                                            lineHeight: 1.6,
                                           ),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 25.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'wk692y97' /* *The app must stay installed f... */,
-                                      ),
-                                      textAlign: TextAlign.center,
-                                      style: FlutterFlowTheme.of(context)
-                                          .labelMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            color: FlutterFlowTheme.of(context)
-                                                .tertiary,
-                                            fontSize: 13.0,
-                                            letterSpacing: 0.0,
-                                            fontWeight: FontWeight.w500,
-                                            lineHeight: 1.3,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: [
+                                        Theme(
+                                          data: ThemeData(
+                                            checkboxTheme: CheckboxThemeData(
+                                              visualDensity:
+                                                  VisualDensity.compact,
+                                              materialTapTargetSize:
+                                                  MaterialTapTargetSize
+                                                      .shrinkWrap,
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(4.0),
+                                              ),
+                                            ),
+                                            unselectedWidgetColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
                                           ),
+                                          child: Checkbox(
+                                            value: _model.checkboxValue ??=
+                                                FFAppState().consentSms,
+                                            onChanged: (newValue) async {
+                                              safeSetState(() => _model
+                                                  .checkboxValue = newValue!);
+                                              if (newValue!) {
+                                                FFAppState().consentSms =
+                                                    _model.checkboxValue!;
+                                                safeSetState(() {});
+                                              } else {
+                                                FFAppState().consentSms =
+                                                    _model.checkboxValue!;
+                                                safeSetState(() {});
+                                              }
+                                            },
+                                            side: BorderSide(
+                                              width: 2,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                            ),
+                                            activeColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            checkColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .alternate,
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  'iv9p5ipb' /* I understand and approve this ... */,
+                                                ),
+                                                textAlign: TextAlign.start,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .tertiary,
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          lineHeight: 1.2,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ].divide(const SizedBox(width: 12.0)),
                                     ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 20.0, 20.0, 0.0),
+                                        20.0, 25.0, 20.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
                                         Navigator.pop(context);
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'kl20ssk7' /* Continue */,
+                                        'k914j74a' /* Continue */,
                                       ),
                                       options: FFButtonOptions(
                                         width: double.infinity,
