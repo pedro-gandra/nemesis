@@ -162,7 +162,7 @@ class _ReviewPage3WidgetState extends State<ReviewPage3Widget>
                                     lineHeight: 1.4,
                                   ),
                             ),
-                          ].divide(const SizedBox(width: 15.0)),
+                          ].divide(const SizedBox(width: 12.0)),
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(

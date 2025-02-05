@@ -532,24 +532,6 @@ class _PhoneNumber2WidgetState extends State<PhoneNumber2Widget> {
                   ],
                 ),
               ),
-              Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
-                  child: Container(
-                    decoration: const BoxDecoration(),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: Image.asset(
-                        'assets/images/49svh_2.png',
-                        width: 100.0,
-                        height: 100.0,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
