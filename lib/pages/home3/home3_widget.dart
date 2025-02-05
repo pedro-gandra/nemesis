@@ -152,7 +152,7 @@ Axium app */
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('phoneNumber');
+                              context.pushNamed('phoneNumber3');
                             },
                             child: Container(
                               constraints: const BoxConstraints(
