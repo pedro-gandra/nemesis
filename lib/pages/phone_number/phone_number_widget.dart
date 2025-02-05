@@ -59,7 +59,6 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        resizeToAvoidBottomInset: false,
         body: SafeArea(
           top: true,
           child: Stack(
