@@ -168,7 +168,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                 focusedBorder:
                                                     OutlineInputBorder(
                                                   borderSide: const BorderSide(
-                                                    color: Color(0x00000000),
+                                                    color: Color(0xABFFFFFF),
                                                     width: 2.0,
                                                   ),
                                                   borderRadius:
@@ -474,7 +474,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                   focusedBorder:
                                                       OutlineInputBorder(
                                                     borderSide: const BorderSide(
-                                                      color: Color(0x00000000),
+                                                      color: Color(0xABFFFFFF),
                                                       width: 2.0,
                                                     ),
                                                     borderRadius:
