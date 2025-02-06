@@ -45,6 +45,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _consentSms = prefs.getBool('ff_consentSms') ?? _consentSms;
     });
+    _safeInit(() {
+      _denySms = prefs.getBool('ff_denySms') ?? _denySms;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -117,6 +120,13 @@ class FFAppState extends ChangeNotifier {
   set consentSms(bool value) {
     _consentSms = value;
     prefs.setBool('ff_consentSms', value);
+  }
+
+  bool _denySms = false;
+  bool get denySms => _denySms;
+  set denySms(bool value) {
+    _denySms = value;
+    prefs.setBool('ff_denySms', value);
   }
 }
 
