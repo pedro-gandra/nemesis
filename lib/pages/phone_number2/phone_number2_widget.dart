@@ -429,6 +429,7 @@ class _PhoneNumber2WidgetState extends State<PhoneNumber2Widget> {
                                     FFAppState().deviceId,
                                   );
                                   if (_model.permissionResult == 1) {
+                                    await actions.registerReceiver();
                                     FFAppState().reviewReached2 = true;
                                     safeSetState(() {});
                                     await Future.delayed(
@@ -468,6 +469,7 @@ class _PhoneNumber2WidgetState extends State<PhoneNumber2Widget> {
                                         FFAppState().deviceId,
                                       );
                                       if (_model.permissionResult2 == 1) {
+                                        await actions.registerReceiver();
                                         FFAppState().reviewReached2 = true;
                                         safeSetState(() {});
                                         await Future.delayed(
