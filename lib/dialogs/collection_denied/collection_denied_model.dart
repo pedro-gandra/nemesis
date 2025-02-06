@@ -1,11 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'consent_sms_widget.dart' show ConsentSmsWidget;
+import 'collection_denied_widget.dart' show CollectionDeniedWidget;
 import 'package:flutter/material.dart';
 
-class ConsentSmsModel extends FlutterFlowModel<ConsentSmsWidget> {
+class CollectionDeniedModel extends FlutterFlowModel<CollectionDeniedWidget> {
   ///  Local state fields for this component.
-
-  bool denyState = false;
 
   bool approveState = false;
 
@@ -13,8 +11,6 @@ class ConsentSmsModel extends FlutterFlowModel<ConsentSmsWidget> {
 
   // State field(s) for approve widget.
   bool? approveValue;
-  // State field(s) for deny widget.
-  bool? denyValue;
 
   @override
   void initState(BuildContext context) {}

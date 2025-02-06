@@ -539,12 +539,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // consentSms
   {
     'p1bc0xx6': {
-      'en': 'Give consent',
-      'pt': 'Consentimento',
+      'en': 'Data collection',
+      'pt': 'Coleta de dados',
     },
     'jajzxqy8': {
       'en':
-          'Our app will collect SMS and store it on our servers so you can read it online without access to your phone.',
+          'Our app will collect SMS messages and store it on our servers so you can read it online without access to your phone.',
       'pt':
           'Nosso aplicativo irá coletar SMS e armazenar em nossos servidores para que você possa ler online posteriormente.',
     },
@@ -552,7 +552,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'I understand and approve this feature',
       'pt': 'Eu entendo e autorizo essa funcionalidade',
     },
+    'oahtjbe5': {
+      'en': 'I do not consent, don\'t ask me again',
+      'pt': 'Eu não autorizo, não me pergunte novamente',
+    },
     'k914j74a': {
+      'en': 'Continue',
+      'pt': 'Continuar',
+    },
+  },
+  // collectionDenied
+  {
+    '0x8gjyqf': {
+      'en': 'Access denied',
+      'pt': 'Acesso negado',
+    },
+    'mebsekzh': {
+      'en':
+          'You denied the data collection of your SMS messages. To keep using the app you must allow this access, since it is neccessary for the feature of online SMS reading.',
+      'pt':
+          'Você não autorizou a coleta de dados de suas mensagens SMS. Para continuar usando o app é preciso autorizar esse acesso, já que é necessário para o recurso de leitura de SMS online.',
+    },
+    'lamtete2': {
+      'en': 'I no longer deny access to my SMS messages',
+      'pt': 'Eu não nego mais o acesso às minhas mensagens SMS',
+    },
+    'n907tnnz': {
       'en': 'Continue',
       'pt': 'Continuar',
     },

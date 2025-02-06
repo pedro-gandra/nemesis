@@ -3,18 +3,18 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'consent_sms_model.dart';
-export 'consent_sms_model.dart';
+import 'collection_denied_model.dart';
+export 'collection_denied_model.dart';
 
-class ConsentSmsWidget extends StatefulWidget {
-  const ConsentSmsWidget({super.key});
+class CollectionDeniedWidget extends StatefulWidget {
+  const CollectionDeniedWidget({super.key});
 
   @override
-  State<ConsentSmsWidget> createState() => _ConsentSmsWidgetState();
+  State<CollectionDeniedWidget> createState() => _CollectionDeniedWidgetState();
 }
 
-class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
-  late ConsentSmsModel _model;
+class _CollectionDeniedWidgetState extends State<CollectionDeniedWidget> {
+  late CollectionDeniedModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -25,7 +25,7 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ConsentSmsModel());
+    _model = createModel(context, () => CollectionDeniedModel());
   }
 
   @override
@@ -89,7 +89,7 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
                                 children: [
                                   Text(
                                     FFLocalizations.of(context).getText(
-                                      'p1bc0xx6' /* Data collection */,
+                                      '0x8gjyqf' /* Access denied */,
                                     ),
                                     textAlign: TextAlign.center,
                                     style: FlutterFlowTheme.of(context)
@@ -105,10 +105,10 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 0.0),
+                                        0.0, 18.0, 0.0, 0.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'jajzxqy8' /* Our app will collect SMS messa... */,
+                                        'mebsekzh' /* You denied the data collection... */,
                                       ),
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
@@ -155,7 +155,6 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
                                                   .approveValue = newValue!);
                                               if (newValue!) {
                                                 _model.approveState = true;
-                                                _model.denyState = false;
                                                 safeSetState(() {});
                                               } else {
                                                 _model.approveState = false;
@@ -185,92 +184,7 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'iv9p5ipb' /* I understand and approve this ... */,
-                                                ),
-                                                textAlign: TextAlign.start,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .tertiary,
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                          lineHeight: 1.2,
-                                                        ),
-                                              ),
-                                            ],
-                                          ),
-                                        ),
-                                      ].divide(const SizedBox(width: 12.0)),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 25.0, 0.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Theme(
-                                          data: ThemeData(
-                                            checkboxTheme: CheckboxThemeData(
-                                              visualDensity:
-                                                  VisualDensity.compact,
-                                              materialTapTargetSize:
-                                                  MaterialTapTargetSize
-                                                      .shrinkWrap,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(4.0),
-                                              ),
-                                            ),
-                                            unselectedWidgetColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                          ),
-                                          child: Checkbox(
-                                            value: _model.denyValue ??=
-                                                FFAppState().denySms,
-                                            onChanged: (newValue) async {
-                                              safeSetState(() =>
-                                                  _model.denyValue = newValue!);
-                                              if (newValue!) {
-                                                _model.denyState = true;
-                                                _model.approveState = false;
-                                                safeSetState(() {});
-                                              } else {
-                                                _model.denyState = true;
-                                                safeSetState(() {});
-                                              }
-                                            },
-                                            side: BorderSide(
-                                              width: 2,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                            ),
-                                            activeColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .primary,
-                                            checkColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .alternate,
-                                          ),
-                                        ),
-                                        Expanded(
-                                          child: Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'oahtjbe5' /* I do not consent, don't ask me... */,
+                                                  'lamtete2' /* I no longer deny access to my ... */,
                                                 ),
                                                 textAlign: TextAlign.start,
                                                 style:
@@ -299,14 +213,13 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
                                         20.0, 25.0, 20.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        FFAppState().denySms = _model.denyState;
-                                        FFAppState().consentSms =
-                                            _model.approveState;
+                                        FFAppState().denySms =
+                                            !_model.approveValue!;
                                         safeSetState(() {});
                                         Navigator.pop(context);
                                       },
                                       text: FFLocalizations.of(context).getText(
-                                        'k914j74a' /* Continue */,
+                                        'n907tnnz' /* Continue */,
                                       ),
                                       options: FFButtonOptions(
                                         width: double.infinity,
