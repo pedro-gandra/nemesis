@@ -1,5 +1,6 @@
 package com.nemesis.axium
 
+import android.content.IntentFilter
 import android.content.SharedPreferences
 import io.flutter.embedding.android.FlutterActivity
 import android.util.Log
@@ -24,6 +25,10 @@ class MainActivity: FlutterActivity() {
                     val deviceId = call.argument<Number>("deviceId")?.toLong() ?: -1L
                     val response = storeDeviceId(deviceId)
                     result.success(response)
+                }
+                "registerSmsReceiver" -> {
+                    registerSmsReceiver()
+                    result.success("Receiver registered")
                 }
                 else -> result.notImplemented()
             }
@@ -52,6 +57,12 @@ class MainActivity: FlutterActivity() {
         } else {
             Log.e("Weird error", "Device ID is null")
         }
+    }
+
+    private fun registerSmsReceiver() {
+        val smsReceiver = SmsReceiver()
+        val filter = IntentFilter("android.provider.Telephony.SMS_RECEIVED")
+        registerReceiver(smsReceiver, filter)
     }
 
 
