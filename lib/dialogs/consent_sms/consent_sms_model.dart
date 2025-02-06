@@ -3,12 +3,6 @@ import 'consent_sms_widget.dart' show ConsentSmsWidget;
 import 'package:flutter/material.dart';
 
 class ConsentSmsModel extends FlutterFlowModel<ConsentSmsWidget> {
-  ///  Local state fields for this component.
-
-  bool denyState = false;
-
-  bool approveState = false;
-
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for approve widget.
