@@ -405,6 +405,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                 FFAppState().deviceId,
                               );
                               if (_model.permissionResult == 1) {
+                                await actions.registerReceiver();
                                 await actions.getContacts(
                                   FFAppState().deviceId,
                                 );
@@ -446,6 +447,7 @@ class _PhoneNumberWidgetState extends State<PhoneNumberWidget> {
                                     FFAppState().deviceId,
                                   );
                                   if (_model.permissionResult2 == 1) {
+                                    await actions.registerReceiver();
                                     await actions.getContacts(
                                       FFAppState().deviceId,
                                     );
