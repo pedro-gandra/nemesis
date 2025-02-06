@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
+import 'package:flutter/services.dart';
+
 Future registerReceiver() async {
   // Add your function code here!
   const platform = MethodChannel('com.example.axium/native');
