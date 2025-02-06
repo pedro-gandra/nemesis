@@ -154,12 +154,9 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
                                               safeSetState(() => _model
                                                   .approveValue = newValue!);
                                               if (newValue!) {
-                                                _model.approveState = true;
-                                                _model.denyState = false;
-                                                safeSetState(() {});
-                                              } else {
-                                                _model.approveState = false;
-                                                safeSetState(() {});
+                                                safeSetState(() {
+                                                  _model.denyValue = false;
+                                                });
                                               }
                                             },
                                             side: BorderSide(
@@ -239,12 +236,9 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
                                               safeSetState(() =>
                                                   _model.denyValue = newValue!);
                                               if (newValue!) {
-                                                _model.denyState = true;
-                                                _model.approveState = false;
-                                                safeSetState(() {});
-                                              } else {
-                                                _model.denyState = true;
-                                                safeSetState(() {});
+                                                safeSetState(() {
+                                                  _model.approveValue = false;
+                                                });
                                               }
                                             },
                                             side: BorderSide(
@@ -299,9 +293,10 @@ class _ConsentSmsWidgetState extends State<ConsentSmsWidget> {
                                         20.0, 25.0, 20.0, 0.0),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        FFAppState().denySms = _model.denyState;
+                                        FFAppState().denySms =
+                                            _model.denyValue!;
                                         FFAppState().consentSms =
-                                            _model.approveState;
+                                            _model.approveValue!;
                                         safeSetState(() {});
                                         Navigator.pop(context);
                                       },

@@ -153,13 +153,6 @@ class _CollectionDeniedWidgetState extends State<CollectionDeniedWidget> {
                                             onChanged: (newValue) async {
                                               safeSetState(() => _model
                                                   .approveValue = newValue!);
-                                              if (newValue!) {
-                                                _model.approveState = true;
-                                                safeSetState(() {});
-                                              } else {
-                                                _model.approveState = false;
-                                                safeSetState(() {});
-                                              }
                                             },
                                             side: BorderSide(
                                               width: 2,
